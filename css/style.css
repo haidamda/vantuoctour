@@ -408,6 +408,26 @@ a.logo img {
    font-size: 20px !important;
 }
 
+.box-search .search-form-top:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #EFEFEF;
+}
+
+.search-form-title:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #D9BD38;
+}
+
 .title-sale{
     font-size: 28px !important;
     height: unset !important;
@@ -1047,7 +1067,10 @@ header .menu-mobile ul li:after{
     }
 
     @media (max-width: 768px) {
-
+        .box-search .search-form-top:after, .search-form-title:after{
+            background: unset !important;
+        }
+        
         a.logo img {
             width: 100px;
         }
