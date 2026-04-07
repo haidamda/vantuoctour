@@ -97,7 +97,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 }
 
 ul, li {
-    margin-bottom: 0px !important;
+    margin-bottom: 0 !important;
 }
 
 ul li{
@@ -149,7 +149,7 @@ p.two_line{
     align-items: center;
     justify-content: center;
     outline: none;
-    box-shadow: 0px 3px 15px 0px #0A0A0A1F;
+    box-shadow: 0 3px 15px 0 #0A0A0A1F;
     z-index: 100;
     transition-property: background-color;
     transition-duration: 0.35s;
@@ -175,7 +175,7 @@ p.two_line{
 
 .owl-nav button:not(.disabled):hover {
     background: var(--primary-color) !important;
-    color: #FFFFFF !important;
+    color: var(--bg3) !important;
 }
 
 .owl-dots {
@@ -205,10 +205,10 @@ span.vnd img{
     content: "";
     position: absolute;
     top: 50%;
-    right: 0px;
+    right: 0;
     width: 1px;
     height: 16px;
-    background: #FFFFFF;
+    background: var(--bg3);
     transform: translate(0%, -50%);
 }
 
@@ -235,14 +235,14 @@ a.logo img {
 
 .hotline , .count-order-notification{
     padding: 3px;
-    background: red;
+    background: linear-gradient(to right, #F5340C 10%, #D00000 50%);
     border-radius: 30px;
     border: 1px solid #E7D9AD;
     font-size:16px;
 }
 
 .hotline .img_hotline{
-    background: #FFFFFF;
+    background: var(--bg3);
     border-radius: 50%;
     padding: 4px;
     height: 24px;
@@ -258,7 +258,7 @@ a.logo img {
 }
 
 .hotline:hover {
-    color: #FFFFFF;
+    color: var(--bg3);
 }
 
 @keyframes oscillate-rotation {
@@ -328,8 +328,6 @@ a.logo img {
 .header-content .content .header .header-menu ul li a,
 .header-content .content .user_profile .img {
     height: 40px;
-    line-height: 40px;
-    text-align: center;
     padding: 0 15px;
     border: 1px solid var(--primary-color);
     background: #E7D9AD;
@@ -337,10 +335,31 @@ a.logo img {
     color: var(--secondary-color);
     font-weight: unset;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     text-transform: unset;
-    transition: all .3s;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.header-content .content .header .header-menu ul li a svg {
+    margin-right: 5px;
+}
+
+.header-content .content .header .header-menu ul li a svg [fill] {
+    fill: var(--secondary-color);
+}
+
+.header-content .content .header .header-menu ul li a svg [stroke] {
+    stroke: var(--secondary-color);
+}
+
+.header-content .content .header .header-menu ul li a:hover svg [fill] {
+    fill: var(--bg3);
+}
+
+.header-content .content .header .header-menu ul li a:hover svg [stroke] {
+    stroke: var(--bg3);
 }
 
 .header-content .content .header .header-menu ul li a:hover {
@@ -427,15 +446,15 @@ a.logo img {
 
 .tag:hover{
     background: var(--primary-color);
-    color: #FFFFFF;
+    color: var(--bg3);
 }
 
 .head-body{
-    background: #FFFFFF;
+    background: var(--bg3);
 }
 
 .bg-gradient-custom {
-    background: linear-gradient(to bottom, #F1EEDB 10%, #FFFFFF 50%);
+    background: linear-gradient(to bottom, #F1EEDB 10%, var(--bg3) 50%);
 }
 
 
@@ -480,7 +499,7 @@ a.logo img {
 .btn-search{
     padding: 0 30px;
     border-radius: 40px;
-    color: #FFFFFF;
+    color: var(--bg3);
     background: linear-gradient(to right, #DFD87D 40%, var(--primary-color) 60%);
     font-size: 20px;
     border: unset;
@@ -510,8 +529,8 @@ a.logo img {
 }
 
 .list-tour .item-tour{
-    background: #FFFFFF;
-    box-shadow: 0px 0px 15px 0px #00000026;
+    background: var(--bg3);
+    box-shadow: 0 0 15px 0 #00000026;
     border-radius: 25px;
     text-align: center;
     padding: 20px;
@@ -535,7 +554,7 @@ a.logo img {
 }
 
 .count-order-notification{
-    color: #FFFFFF;
+    color: var(--bg3);
     font-size: 14px;
     padding-left: 10px;
     padding-right: 10px;
@@ -548,6 +567,7 @@ input[name="day_start"],.label_day_start{
     color: var(--primary-color);
     font-size: 12px;
     background: unset;
+    text-align: center;
 }
 
 .label_day_start{
@@ -559,8 +579,8 @@ input[name="day_start"]:focus{
 }
 
 .list-flash-item .flash-item{
-    background: #FFFFFF;
-    box-shadow: 0px 0px 15px 0px #00000026;
+    background: var(--bg3);
+    box-shadow: 0 0 15px 0 #00000026;
     border-radius: 25px;
     overflow: hidden;
     position: relative;
@@ -596,7 +616,7 @@ input[name="day_start"]:focus{
 .list-flash-item .timer {
     top: 10px;
     right: 10px;
-    background: red;
+    background: var(--red);
     padding: 3px 10px;
     border-radius: 25px;
     color: #ffff;
@@ -622,13 +642,13 @@ input[name="day_start"]:focus{
 
 .list-flash-item .btn-booking:hover{
    background: var(--primary-color);
-   color: #FFFFFF;
+   color: var(--bg3);
    border: 1px solid var(--primary-color);
 }
 
 .tour-item .btn-booking:hover {
     background: var(--primary-color) !important;
-    color: #FFFFFF !important;
+    color: var(--bg3) !important;
 }
 /*style booing button*/
 
@@ -645,7 +665,7 @@ input[name="day_start"]:focus{
 .btn-booking::before {
     width: 60px;
     background: rgba(255, 255, 255, 0.5);
-    filter: blur(30px);
+    filter: blur(5px);
     opacity: 0.5;
 }
 
@@ -709,6 +729,11 @@ input[name="day_start"]:focus{
 
 .location-favorite .favorite-item-title .location-name{
     font-size: 20px;
+    font-weight: bold;
+}
+
+.location-favorite .location p:not(.location-name){
+    font-size: 14px;
 }
 
 /*tour list*/
@@ -717,7 +742,7 @@ input[name="day_start"]:focus{
    border-radius: 10px;
    background: var(--secondary-color);
    border: none;
-   color: #FFFFFF;
+   color: var(--bg3);
    padding: 10px 20px;
     position: relative;
     overflow: hidden;
@@ -729,12 +754,12 @@ input[name="day_start"]:focus{
 }
 
 .tour-item{
-    box-shadow: 0px 0px 15px 0px #00000026;
+    box-shadow: 0 0 15px 0 #00000026;
     border-radius: 25px;
 }
 
 .tour-body ul li {
-    padding: 3px 0px;
+    padding: 3px 0;
 }
 
 .tour-img > img {
@@ -746,7 +771,7 @@ input[name="day_start"]:focus{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    box-shadow: inset 0px 0px 0px 2000px #00000085;
+    box-shadow: inset 0 0 0 2000px #00000085;
 }
 
 .about .about-title{
@@ -759,7 +784,7 @@ input[name="day_start"]:focus{
 
 .why-card{
     border-radius: 15px;
-    background: #FFFFFF;
+    background: var(--bg3);
     height: 220px;
     padding: 8%;
 }
@@ -812,7 +837,7 @@ input[name="day_start"]:focus{
 /*news*/
 
 .new-item{
-    box-shadow: 0px 0px 15px 0px #00000026;
+    box-shadow: 0 0 15px 0 #00000026;
     border-radius: 25px;
 }
 
@@ -825,7 +850,7 @@ input[name="day_start"]:focus{
    background: var(--secondary-color);
    border: none;
    padding: 10px 20px;
-   color: #FFFFFF;
+   color: var(--bg3);
     cursor: pointer;
     font-size: 14px;
 }
@@ -836,12 +861,12 @@ input[name="day_start"]:focus{
 
 .btn-detail:hover{
     background: var(--primary-color);
-    color: #FFFFFF;
+    color: var(--bg3);
     border: unset;
 }
 
 .news{  
-    background: linear-gradient(to bottom, #F6F4E9 10%, #FFFFFF 50%);
+    background: linear-gradient(to bottom, #F6F4E9 10%, var(--bg3) 50%);
 }
 
 /*footer*/
@@ -871,7 +896,7 @@ input[name="day_start"]:focus{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    box-shadow: inset 0px 0px 0px 2000px #FFFAECED;
+    box-shadow: inset 0 0 0 2000px #FFFAECED;
 }
 
 .title-bottom{
@@ -920,26 +945,34 @@ input[name="day_start"]:focus{
     display: none;
 }
 
-
 header .menu-mobile {
     width: 70%;
     position: fixed;
     top: 0;
-    left: 0px;
+    left: 0;
     height: 100%;
-    overflow: scroll;
-    background: #FFFFFF;
+    /*overflow: scroll;*/
+    background: var(--bg3);
     z-index: 100;
+    border-right: 1px solid var(--secondary-color);
 }
 
 header .menu-mobile ul li a {
     display: block;
     padding: 5px 10px;
+    color: var(--secondary-color);
 }
 
 header .menu-mobile ul li{
     position: relative;
+    padding: 15px;
 }
+
+.menu-mobile .user-profile ul li:first-child::after{
+    background: unset;
+}
+
+
 
 header .menu-mobile ul li:after{
     content: "";
@@ -959,6 +992,21 @@ header .menu-mobile ul li:after{
         text-align: center;
     }
 
+    .btn-close-menu{
+        border-radius: 12px;
+        width: 35px;
+        border: 2px solid;
+        text-align: center;
+    }
+
+    .avatar{
+        background: var(--secondary-color);
+        color: #fff;
+        text-align: center;
+        display: flex;
+        justify-content: end;
+        padding: 8px;
+    }
     @media (max-width: 768px) {
 
         a.logo img {
@@ -980,7 +1028,7 @@ header .menu-mobile ul li:after{
         /*.social-actions {*/
         /*    bottom: 0;*/
         /*    display: flex;*/
-        /*    background: #ffffff;*/
+        /*    background: var(--bg3);*/
         /*    justify-content: space-between;*/
         /*    width: 100%;*/
         /*    padding: 10px 20px;*/
@@ -1025,7 +1073,6 @@ header .menu-mobile ul li:after{
             flex-direction: column;
             text-align: center;
         }
-
     }
 }
 
