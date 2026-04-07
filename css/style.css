@@ -342,6 +342,10 @@ a.logo img {
     align-items: center;
 }
 
+.header-content .content .user_profile .img{
+    padding: 0 10px !important;
+}
+
 .header-content .content .header .header-menu ul li a svg {
     margin-right: 5px;
 }
@@ -611,6 +615,12 @@ input[name="day_start"]:focus{
     font-weight: 200;
     background: #FFF9F1;
     height: 26px;
+    display: flex;
+    align-items: center;
+}
+
+.list-flash-item .flash-item .flash-item-tag span svg{
+    margin-right: 4px;
 }
 
 .list-flash-item .timer {
@@ -762,10 +772,11 @@ input[name="day_start"]:focus{
     padding: 3px 0;
 }
 
-.tour-img > img {
+.tour-img {
     height: 191px;
     overflow: hidden;
 }
+
 .about{
     background: url('../images/bg-about.jpg');
     background-repeat: no-repeat;
@@ -1030,12 +1041,19 @@ header .menu-mobile ul li:after{
         padding: 8px;
     }
 
-
+    .tour-img, .new-item img {
+        height: auto;
+        overflow: hidden;
+    }
 
     @media (max-width: 768px) {
 
         a.logo img {
             width: 100px;
+        }
+
+        a.logo-bottom img{
+            width: 200px;
         }
 
         .icon-menu-mobile{

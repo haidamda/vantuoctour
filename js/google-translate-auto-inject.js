@@ -24,7 +24,11 @@
   // Selector mặc định bao quát các theme phổ biến trong project
   var DEFAULT_SELECTORS = [
     '.gt-widget.select-language-pc',
-    '.gt-widget.select-language-mobile',
+    'li.dropdown.language-dropdown',
+    '#header .menu li.dropdown:has(.flag-icon)',
+    'header li.dropdown:has([class*="flag-icon-"])',
+    '.header-language',
+    '.lang-switcher'
   ];
 
   var selectors = (cfg.selectors && cfg.selectors.length) ? cfg.selectors : DEFAULT_SELECTORS;
