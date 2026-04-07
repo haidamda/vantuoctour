@@ -1,0 +1,233 @@
+/* ============================================
+   Google Translate Widget SDK v2.0
+   Fully configurable via CSS variables + classes
+   ============================================ */
+
+/* === An UI mac dinh Google Translate === */
+.goog-te-banner-frame { display:none !important; }
+#goog-gt-tt, .goog-te-balloon-frame { display:none !important; }
+.goog-text-highlight { background:none !important; box-shadow:none !important; }
+body > .skiptranslate { display:none !important; height:0 !important; overflow:hidden !important; }
+body { top:0 !important; }
+#google_translate_element { position:absolute !important; top:-9999px !important; left:-9999px !important; opacity:0 !important; pointer-events:none !important; }
+
+/* ==============================================
+   CSS VARIABLES â ghi de de custom theme
+   Dat vao .gt-widget hoac parent element
+   ============================================== */
+.gt-widget {
+  /* --- Mau sac --- */
+  --gt-bg: #fff;
+  --gt-color: #333;
+  --gt-border: #d0dcff;
+  --gt-border-hover: #4f8ef7;
+  --gt-radius: 8px;
+
+  /* --- Dropdown --- */
+  --gt-dd-bg: #fff;
+  --gt-dd-border: #e8e8f0;
+  --gt-dd-shadow: 0 8px 24px rgba(0,0,0,.12);
+  --gt-dd-radius: 10px;
+  --gt-dd-min-width: 160px;
+
+  /* --- Option --- */
+  --gt-opt-hover-bg: #f0f4ff;
+  --gt-opt-active-bg: #4f8ef7;
+  --gt-opt-active-color: #fff;
+
+  /* --- Arrow --- */
+  --gt-arrow-color: #999;
+  --gt-arrow-size: 10px;
+
+  /* --- Flag --- */
+  --gt-flag-width: 22px;
+  --gt-flag-height: 15px;
+  --gt-flag-radius: 2px;
+
+  /* --- Font --- */
+  --gt-font-size: 13px;
+  --gt-font-weight: 600;
+
+  /* --- Spacing --- */
+  --gt-padding: 6px 14px;
+  --gt-gap: 8px;
+  --gt-opt-padding: 10px 16px;
+  --gt-opt-gap: 10px;
+
+  position:relative;
+  user-select:none;
+  font-family:inherit;
+  display:inline-block;
+}
+
+/* ======================== SIZE PRESETS ======================== */
+.gt-widget.gt-sm {
+  --gt-font-size: 11px;
+  --gt-padding: 4px 10px;
+  --gt-flag-width: 18px;
+  --gt-flag-height: 12px;
+  --gt-gap: 6px;
+  --gt-opt-padding: 7px 12px;
+  --gt-opt-gap: 8px;
+  --gt-arrow-size: 8px;
+}
+.gt-widget.gt-lg {
+  --gt-font-size: 15px;
+  --gt-padding: 10px 20px;
+  --gt-flag-width: 28px;
+  --gt-flag-height: 19px;
+  --gt-gap: 10px;
+  --gt-opt-padding: 13px 20px;
+  --gt-opt-gap: 12px;
+  --gt-arrow-size: 12px;
+  --gt-radius: 10px;
+}
+
+/* ======================== SELECTED BUTTON ==================== */
+.gt-widget-selected {
+  display:flex; align-items:center; gap:var(--gt-gap);
+  padding:var(--gt-padding); border-radius:var(--gt-radius);
+  background:var(--gt-bg); border:2px solid var(--gt-border);
+  cursor:pointer; font-size:var(--gt-font-size); font-weight:var(--gt-font-weight);
+  color:var(--gt-color); transition:border-color .2s;
+  line-height:1.4;
+}
+.gt-widget-selected:hover { border-color:var(--gt-border-hover); }
+
+/* Flag trong button */
+.gt-widget-selected .gt-flag {
+  width:var(--gt-flag-width); height:var(--gt-flag-height);
+  border-radius:var(--gt-flag-radius); object-fit:cover; flex-shrink:0;
+}
+
+/* Arrow */
+.gt-widget-selected .gt-arrow {
+  font-size:var(--gt-arrow-size); color:var(--gt-arrow-color);
+  margin-left:2px; transition:transform .25s;
+}
+.gt-widget.open .gt-arrow { transform:rotate(180deg); }
+
+/* ======================== DISPLAY MODE ======================= */
+/* flag-text (default): hien ca flag + text */
+
+/* flag-only: an text + arrow */
+.gt-widget.gt-flag-only .gt-label { display:none; }
+.gt-widget.gt-flag-only .gt-arrow { display:none; }
+.gt-widget.gt-flag-only .gt-widget-selected { padding:6px 8px; gap:0; }
+.gt-widget.gt-flag-only.gt-sm .gt-widget-selected { padding:4px 6px; }
+.gt-widget.gt-flag-only.gt-lg .gt-widget-selected { padding:8px 10px; }
+
+/* text-only: an flag */
+.gt-widget.gt-text-only .gt-flag { display:none; }
+
+/* code-only: an flag, hien ma ngon ngu (EN, VI) */
+.gt-widget.gt-code-only .gt-flag { display:none; }
+.gt-widget.gt-code-only .gt-label { text-transform:uppercase; letter-spacing:.5px; }
+
+/* flag-code: hien flag + ma (EN, VI) thay vi ten day du */
+.gt-widget.gt-flag-code .gt-label { text-transform:uppercase; letter-spacing:.5px; }
+
+/* ======================== FLAG SHAPE ========================= */
+/* Rectangular (default) */
+/* Circular */
+.gt-widget.gt-flag-circle .gt-flag,
+.gt-widget.gt-flag-circle .gt-widget-option img {
+  border-radius:50%; width:var(--gt-flag-width); height:var(--gt-flag-width); /* square */
+}
+/* Rounded */
+.gt-widget.gt-flag-rounded .gt-flag,
+.gt-widget.gt-flag-rounded .gt-widget-option img {
+  border-radius:4px;
+}
+
+/* ======================== DROPDOWN LIST ====================== */
+.gt-widget-dropdown {
+  display:none; position:absolute; top:calc(100% + 6px);
+  background:var(--gt-dd-bg); border:1px solid var(--gt-dd-border);
+  border-radius:var(--gt-dd-radius);
+  box-shadow:var(--gt-dd-shadow); overflow:hidden; z-index:9999;
+  min-width:var(--gt-dd-min-width);
+  opacity:0; transform:translateY(-8px);
+  transition:opacity .2s, transform .2s;
+}
+/* Position: right (default) */
+.gt-widget .gt-widget-dropdown { right:0; }
+/* Position: left */
+.gt-widget.gt-drop-left .gt-widget-dropdown { right:auto; left:0; }
+/* Position: center */
+.gt-widget.gt-drop-center .gt-widget-dropdown { right:auto; left:50%; transform:translateX(-50%) translateY(-8px); }
+.gt-widget.gt-drop-center.open .gt-widget-dropdown { transform:translateX(-50%) translateY(0); }
+
+/* Open state */
+.gt-widget.open .gt-widget-dropdown {
+  display:block; opacity:1; transform:translateY(0);
+}
+
+/* ======================== OPTIONS ============================ */
+.gt-widget-option {
+  display:flex; align-items:center; gap:var(--gt-opt-gap);
+  padding:var(--gt-opt-padding); cursor:pointer;
+  font-size:var(--gt-font-size); font-weight:500;
+  color:var(--gt-color); transition:background .15s;
+}
+.gt-widget-option:hover { background:var(--gt-opt-hover-bg); }
+.gt-widget-option.active { background:var(--gt-opt-active-bg); color:var(--gt-opt-active-color); font-weight:600; }
+.gt-widget-option img {
+  width:var(--gt-flag-width); height:var(--gt-flag-height);
+  border-radius:var(--gt-flag-radius); object-fit:cover; flex-shrink:0;
+}
+
+/* Option display modes */
+.gt-widget.gt-flag-only .gt-widget-option .gt-opt-label { display:none; }
+.gt-widget.gt-text-only .gt-widget-option img { display:none; }
+.gt-widget.gt-code-only .gt-widget-option img { display:none; }
+
+/* ======================== THEME PRESETS ====================== */
+/* Dark */
+.gt-widget.gt-dark {
+  --gt-bg: #1e1e2e;
+  --gt-color: #cdd6f4;
+  --gt-border: #45475a;
+  --gt-border-hover: #89b4fa;
+  --gt-dd-bg: #1e1e2e;
+  --gt-dd-border: #45475a;
+  --gt-dd-shadow: 0 8px 24px rgba(0,0,0,.4);
+  --gt-arrow-color: #6c7086;
+  --gt-opt-hover-bg: #313244;
+  --gt-opt-active-bg: #89b4fa;
+  --gt-opt-active-color: #1e1e2e;
+}
+
+/* Minimal â khong border, khong shadow */
+.gt-widget.gt-minimal {
+  --gt-border: transparent;
+  --gt-border-hover: transparent;
+  --gt-bg: transparent;
+  --gt-dd-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+.gt-widget.gt-minimal .gt-widget-selected { border-width:0; padding:4px 8px; }
+.gt-widget.gt-minimal .gt-widget-selected:hover { background:rgba(0,0,0,.04); }
+
+/* Bordered â noi bat border */
+.gt-widget.gt-bordered {
+  --gt-border: #333;
+  --gt-border-hover: #000;
+  --gt-radius: 6px;
+}
+
+/* Pill â bo tron */
+.gt-widget.gt-pill {
+  --gt-radius: 100px;
+  --gt-dd-radius: 14px;
+}
+
+/* Glass */
+.gt-widget.gt-glass {
+  --gt-bg: rgba(255,255,255,.7);
+  --gt-dd-bg: rgba(255,255,255,.85);
+  --gt-border: rgba(255,255,255,.3);
+  --gt-border-hover: rgba(255,255,255,.6);
+  --gt-dd-shadow: 0 8px 32px rgba(0,0,0,.15);
+}
+.gt-widget.gt-glass .gt-widget-selected,
+.gt-widget.gt-glass .gt-widget-dropdown { backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); }

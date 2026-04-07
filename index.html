@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/google-translate-widget.css">
 </head>
 <body class="frontend-page header-normal">
 <header>
@@ -72,10 +73,23 @@
                                         Liên hệ
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="vnd"><img src="images/flag-vietnam.png">VN - VNĐ</span>
-                                    </a>
+
+                                <li id="gtranslate-auto-injected" class="gt-widget select-language-pc">
+                                    <div class="gt-widget-selected" data-gt-toggle="">
+                                        <img class="gt-flag" src="https://flagcdn.com/w40/vn.png" alt="flag">
+                                        <span class="gt-label">Tiếng Việt</span><span class="gt-arrow">▼</span>
+                                    </div>
+                                    <div class="gt-widget-dropdown">
+                                        <div class="gt-widget-option active" data-lang="vi" data-flag="vn">
+                                            <img src="https://flagcdn.com/w40/vn.png" alt="vi"><span class="gt-opt-label">Tiếng Việt</span>
+                                        </div>
+                                        <div class="gt-widget-option" data-lang="en" data-flag="gb">
+                                            <img src="https://flagcdn.com/w40/gb.png" alt="en"><span class="gt-opt-label">English</span>
+                                        </div>
+                                        <div class="gt-widget-option" data-lang="ja" data-flag="jp">
+                                            <img src="https://flagcdn.com/w40/jp.png" alt="ja"><span class="gt-opt-label">日本語</span>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -173,6 +187,23 @@
                         <a class="signup" data-bs-target="#register" data-bs-toggle="modal" href="#register">
                             Đăng ký
                         </a>
+                    </li>
+                    <li class="gt-widget select-language-mobile">
+                        <div class="gt-widget-selected" data-gt-toggle="">
+                            <img class="gt-flag" src="https://flagcdn.com/w40/vn.png" alt="flag">
+                            <span class="gt-label">Tiếng Việt</span><span class="gt-arrow">▼</span>
+                        </div>
+                        <div class="gt-widget-dropdown">
+                            <div class="gt-widget-option active" data-lang="vi" data-flag="vn">
+                                <img src="https://flagcdn.com/w40/vn.png" alt="vi"><span class="gt-opt-label">Tiếng Việt</span>
+                            </div>
+                            <div class="gt-widget-option" data-lang="en" data-flag="gb">
+                                <img src="https://flagcdn.com/w40/gb.png" alt="en"><span class="gt-opt-label">English</span>
+                            </div>
+                            <div class="gt-widget-option" data-lang="ja" data-flag="jp">
+                                <img src="https://flagcdn.com/w40/jp.png" alt="ja"><span class="gt-opt-label">日本語</span>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -2081,7 +2112,9 @@
 </script>
 <script src="https://mustgo.tourkitweb.vn/themes/mustgo/dist/assets/js/jquery-ui.min.js">
 </script>
-<!-- <script src="https://mustgo.tourkitweb.vn/themes/mustgo/dist/assets/js/main.js"></script> -->
+<script type="text/javascript">window.GTranslateAutoInject = {"pageLanguage":"vi","languages":"vi:Tiếng Việt:vn, en:English:gb, ja:日本語:jp","display":"flag-text","size":"md","flagStyle":"rect","theme":"default","showArrow":true,"selectors":[]};</script>
+<script type="text/javascript" src="js/google-translate-widget.js"></script>
+<script type="text/javascript" src="js/google-translate-auto-inject.js"></script>
 <script>
     var daterangepickerLocale = {
         format: 'DD/MM/YYYY',
@@ -2109,8 +2142,10 @@
         maxDate: moment().add(30, 'days'),
     });
 
-    $("#showMenuMobile").on("click", function () {
-        $('.menu-mobile').slideToggle();
+    $("#showMenuMobile, .btn-close-menu").on("click", function () {
+        $('.menu-mobile').animate({
+            width: "toggle"
+        });
     });
 
     const bannerCarousel = $('.banner-carousel').owlCarousel({
