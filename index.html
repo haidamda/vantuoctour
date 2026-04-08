@@ -257,10 +257,10 @@
     <div class="container">
         <div class="box-search">
             <div class="d-flex justify-content-between align-items-center align-items-md-center flex-column flex-md-row gap-2 search-form-top position-relative">
-                <h5 class="mb-0 fw-bold title search-form-title position-relative pb-3 ">
+                <h5 class="mb-0 fw-bold title search-form-title position-relative">
                     Bạn muốn đi đâu
                 </h5>
-                <div class="d-flex gap-2 flex-wrap pb-3">
+                <div class="d-flex gap-2 flex-wrap">
                                 <span class="badge tag">
                                     Thái lan
                                 </span>
@@ -431,7 +431,7 @@
         </div>
         <div class="list-flash-item row pt-4 g-4">
             <div class="col-md-6 col-lg-3">
-                <div class="flash-item">
+                <div class="flash-item" data-timer="09-04-2026">
                     <img src="images/flash-item.png">
                     <div class="detail-flash-item p-3">
                         <p class="two_line hover-color-secondary">
@@ -464,7 +464,7 @@
                     </div>
                     
                     <div class="timer d-flex position-absolute">
-                        <img src="images/icon-flash.png"/> 02: 03: 03
+                        <img src="images/icon-flash.png"/> <span class="countdown">02: 03: 03</span>
                     </div>
                 </div>
             </div>
@@ -507,7 +507,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
-                <div class="flash-item">
+                <div class="flash-item" data-timer="09-04-2026">
                     <img src="images/flash-item-3.png">
                     <div class="detail-flash-item p-3">
                         <p class="two_line hover-color-secondary">
@@ -542,7 +542,7 @@
                         </div>
                     </div>
                     <div class="timer d-flex position-absolute">
-                        <img src="images/icon-flash.png"/> 02: 03: 03
+                        <img src="images/icon-flash.png"/> <span class="countdown">02: 03: 03</span>
                     </div>
                 </div>
             </div>
@@ -683,9 +683,9 @@
                                         <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                     </span>
 
-                                    <label for="date-1"
+                                    <label
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        Liên hệ
+                                        <span>Liên hệ</span>
                                     </label>
                                 </li>
                                 <li>
@@ -744,9 +744,9 @@
                                                    <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                                 </span>
 
-                                    <label for="date-6"
+                                    <label for="date-1"
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        <input class="w-100" name="day_start" id="date-6" type="text">
+                                        <input class="w-100" name="day_start" id="date-1" type="text">
                                         <i class="fa-solid fa-caret-down"></i>
                                     </label>
                                 </li>
@@ -808,9 +808,9 @@
                                         <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                     </span>
 
-                                    <label for="date-1"
+                                    <label
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        Liên hệ
+                                        <span>Liên hệ</span>
                                     </label>
                                 </li>
                                 <li>
@@ -869,9 +869,9 @@
                                                    <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                                 </span>
 
-                                    <label for="date-6"
+                                    <label for="date-2"
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        <input class="w-100" name="day_start" id="date-6" type="text">
+                                        <input class="w-100" name="day_start" id="date-2" type="text">
                                         <i class="fa-solid fa-caret-down"></i>
                                     </label>
                                 </li>
@@ -1012,9 +1012,9 @@
                                         <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                     </span>
 
-                                    <label for="date-1"
+                                    <label
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        Liên hệ
+                                        <span>Liên hệ</span>
                                     </label>
                                 </li>
                                 <li>
@@ -1073,9 +1073,9 @@
                                                    <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                                 </span>
 
-                                    <label for="date-6"
+                                    <label for="date-3"
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        <input class="w-100" name="day_start" id="date-6" type="text">
+                                        <input class="w-100" name="day_start" id="date-3" type="text">
                                         <i class="fa-solid fa-caret-down"></i>
                                     </label>
                                 </li>
@@ -1137,9 +1137,9 @@
                                         <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                     </span>
 
-                                    <label for="date-1"
+                                    <label
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        Liên hệ
+                                        <span>Liên hệ</span>
                                     </label>
                                 </li>
                                 <li>
@@ -1198,9 +1198,9 @@
                                                    <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                                 </span>
 
-                                    <label for="date-6"
+                                    <label for="date-4"
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        <input class="w-100" name="day_start" id="date-6" type="text">
+                                        <input class="w-100" name="day_start" id="date-4" type="text">
                                         <i class="fa-solid fa-caret-down"></i>
                                     </label>
                                 </li>
@@ -1288,9 +1288,9 @@
                                         <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                     </span>
 
-                                    <label for="date-1"
+                                    <label
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        Liên hệ
+                                        <span>Liên hệ</span>
                                     </label>
                                 </li>
                                 <li>
@@ -1349,9 +1349,9 @@
                                                    <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                                 </span>
 
-                                    <label for="date-6"
+                                    <label for="date-5"
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        <input class="w-100" name="day_start" id="date-6" type="text">
+                                        <input class="w-100" name="day_start" id="date-5" type="text">
                                         <i class="fa-solid fa-caret-down"></i>
                                     </label>
                                 </li>
@@ -1413,9 +1413,9 @@
                                         <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                     </span>
 
-                                    <label for="date-1"
+                                    <label
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        Liên hệ
+                                        <span>Liên hệ</span>
                                     </label>
                                 </li>
                                 <li>
@@ -1565,9 +1565,9 @@
                                         <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                     </span>
 
-                                    <label for="date-1"
+                                    <label
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        Liên hệ
+                                        <span>Liên hệ</span>
                                     </label>
                                 </li>
                                 <li>
@@ -1626,9 +1626,9 @@
                                                    <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                                 </span>
 
-                                    <label for="date-6"
+                                    <label for="date-7"
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        <input class="w-100" name="day_start" id="date-6" type="text">
+                                        <input class="w-100" name="day_start" id="date-7" type="text">
                                         <i class="fa-solid fa-caret-down"></i>
                                     </label>
                                 </li>
@@ -1690,9 +1690,9 @@
                                         <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                     </span>
 
-                                    <label for="date-1"
+                                    <label
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        Liên hệ
+                                        <span>Liên hệ</span>
                                     </label>
                                 </li>
                                 <li>
@@ -1751,9 +1751,9 @@
                                                    <i class="fa-regular fa-calendar-days"></i> Ngày khởi hành:
                                                 </span>
 
-                                    <label for="date-6"
+                                    <label for="date-8"
                                            class="badge rounded-pill border border-warning px-3 py-1 w-50 label_day_start">
-                                        <input class="w-100" name="day_start" id="date-6" type="text">
+                                        <input class="w-100" name="day_start" id="date-8" type="text">
                                         <i class="fa-solid fa-caret-down"></i>
                                     </label>
                                 </li>
@@ -2143,6 +2143,52 @@
 <script type="text/javascript" src="js/google-translate-widget.js"></script>
 <script type="text/javascript" src="js/google-translate-auto-inject.js"></script>
 <script>
+        function parseDate(dateStr) {
+        // format: dd-mm-yyyy
+        const [day, month, year] = dateStr.split('-').map(Number);
+        return new Date(year, month - 1, day);
+    }
+
+    function updateCountdown() {
+        const items = document.querySelectorAll('.flash-item[data-timer]');
+
+        items.forEach(item => {
+            const dateStr = item.dataset.timer;
+            const targetDate = parseDate(dateStr);
+            const now = new Date();
+
+            const diff = targetDate - now;
+
+            const display = item.querySelector('.countdown');
+
+            if (!display) return;
+
+            if (diff <= 0) {
+                display.innerText = "Hết hạn";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+            const pad = n => String(n).padStart(2, '0');
+            const timer_format = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+            if (days > 0) {
+                display.innerText = `${days}d ` + timer_format;
+            } else {
+                display.innerText = timer_format;
+            }
+        });
+    }
+
+    // chạy mỗi giây
+    setInterval(updateCountdown, 1000);
+
+    // chạy ngay lần đầu
+    updateCountdown();
+
+    //config daterangepicker
     var daterangepickerLocale = {
         format: 'DD/MM/YYYY',
         applyLabel: 'Áp dụng',

@@ -402,13 +402,15 @@ a.logo img {
     box-shadow: 0 0 15px 0 #00000026;
     background: #fff;
     border-radius: 25px;
-    padding: 25px 15px;
+    padding: 0 25px 15px;
     margin-top: -10%;
     position: relative;
 }
 
 .box-search .title{
    font-size: 20px !important;
+    padding: 35px 0;
+    transition: 0.3s;
 }
 
 .box-search .search-form-top:after{
@@ -426,7 +428,7 @@ a.logo img {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 2px;
+    height: 3px;
     width: 100%;
     background: #D9BD38;
 }
@@ -592,8 +594,10 @@ a.logo img {
 input[name="day_start"],.label_day_start{
     border: unset;
     color: var(--primary-color);
-    font-size: 12px;
     background: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
